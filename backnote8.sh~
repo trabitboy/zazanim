@@ -1,0 +1,7 @@
+#cd note8back
+#adb pull /mnt/sdcard/Android/data/zaza.stable/files
+adb pull /storage/extSdCard/Android/data/zaza.stable/files/current.sh
+source current.sh
+echo $CURRENT
+cd $CURRENT
+adb pull /storage/extSdCard/Android/data/zaza.stable/files/

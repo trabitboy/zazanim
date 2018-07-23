@@ -1,0 +1,132 @@
+#include "SDL.h"
+#include "stdio.h"
+#include "floodfill.h"
+#include "globstruct.h"
+#include <queue>
+
+
+//TODO xy struct
+
+
+//declaring an arry for the pixels to color
+bool floodMap[CVSWDTH*CVSHGTH];
+
+//check floodability without recursion
+bool floodability(Uint8* pixels,Uint16 x,Uint16 y, myRgba target){
+	
+	
+}
+
+void noRecFloodFill( SDL_Surface * surf , Uint16 x, Uint16 y,  myRgba replacecol ){
+//what comes from copy tex from fb is always BGRA
+
+	myRgba targetcol;
+	//determining target
+	targetcol.b=((Uint8*)surf->pixels)[4*(x+CVSWDTH*y)];
+	targetcol.g=((Uint8*)surf->pixels)[4*(x+CVSWDTH*y)+1];
+	targetcol.r=((Uint8*)surf->pixels)[4*(x+CVSWDTH*y)+2];
+	targetcol.a=((Uint8*)surf->pixels)[4*(x+CVSWDTH*y)+3];
+
+	LOGD("zzn about to fill color b %d g %d r %d a %d \n",targetcol.b,targetcol.g,targetcol.r,targetcol.a);
+	LOGD("zzn with b %d g %d r %d a %d \n",replacecol.b,replacecol.g,replacecol.r,replacecol.a);
+	LOGD("zzn at %d %d \n",x,y);
+	//now calling recursion on current pixel
+	//recurse((Uint8*)surf->pixels,x,y,targetcol,replacecol);
+
+	std::queue<CanvasPoint> toTreat;
+
+	//to avoid recursion we just flag everything we need to paint in the buffer above
+	Uint16 i;
+	for(i=0;i<CVSHGTH*CVSWDTH;i++){
+		floodMap[i]=false;
+	}
+
+	//TODO we assume target is valid
+	floodMap[x+y*CVSWDTH]=true;
+	//WIP flood map doesn't solve recursion as we need a stack, we still need a stack for treated points,
+	//test inclusion of sdl stack
+	CanvasPoint origin;
+	origin.x=x;
+	origin.y=y;
+	toTreat.push(origin);
+	//TODO implement queue or implement queue ( FIFO ) in c ( should be queue of coordinates)
+	while(!toTreat.empty()){
+	  CanvasPoint point = toTreat.pop();
+	  
+	}
+	
+}
+
+
+//WIP NOT STABLE recursion seems to crash the app, working on alternative non recursive version
+//alpha check commented, when flood filling we are not caring about light table stuff
+void recurse(Uint8 * pixels,Uint16 x,Uint16 y, myRgba target , myRgba replace){
+	
+  //we check that we are still on canvas
+	
+  //if x y color = replace color ret
+  if(
+  replace.b==pixels[4*(x+CVSWDTH*y)]
+  &&replace.g==(pixels)[4*(x+CVSWDTH*y)+1]
+  &&replace.r==(pixels)[4*(x+CVSWDTH*y)+2]
+  //&&replace.a==(pixels)[4*(x+CVSWDTH*y)+3]
+     ){
+    //	LOGD("zzn x y already has replace color \n");
+    return;
+  }
+  
+  //if x y color != target color ret
+  if(
+  target.b!=(pixels)[4*(x+CVSWDTH*y)]
+  &&target.g!=(pixels)[4*(x+CVSWDTH*y)+1]
+  &&target.r!=(pixels)[4*(x+CVSWDTH*y)+2]
+  //  &&target.a!=(pixels)[4*(x+CVSWDTH*y)+3]
+     ){
+    //	LOGD("zzn x y is not target color \n");
+    return;
+  }
+
+  
+  //x y color = replace
+  //  LOGD("zzn replacing pixel \n");
+  (pixels)[4*(x+CVSWDTH*y)]=replace.b;
+  (pixels)[4*(x+CVSWDTH*y)+1]=replace.g;
+  (pixels)[4*(x+CVSWDTH*y)+2]=replace.r;
+  (pixels)[4*(x+CVSWDTH*y)+3]=replace.a;
+
+
+  //recursive call n,s,e,w
+if(y>0){
+  recurse(pixels,x,y-1,target,replace);
+}
+if(y<CVSHGTH-1)
+recurse(pixels,x,y+1,target,replace);
+if(x>0){
+	recurse(pixels,x-1,y,target,replace);
+}
+if(x<CVSWDTH-1){
+recurse(pixels,x+1,y,target,replace);
+}
+
+  
+  //return
+}
+
+
+void floodfill( SDL_Surface * surf , Uint16 x, Uint16 y,  myRgba replacecol ){
+//what comes from copy tex from fb is always BGRA
+
+myRgba targetcol;
+//determining target
+targetcol.b=((Uint8*)surf->pixels)[4*(x+CVSWDTH*y)];
+targetcol.g=((Uint8*)surf->pixels)[4*(x+CVSWDTH*y)+1];
+targetcol.r=((Uint8*)surf->pixels)[4*(x+CVSWDTH*y)+2];
+targetcol.a=((Uint8*)surf->pixels)[4*(x+CVSWDTH*y)+3];
+
+LOGD("zzn about to fill color b %d g %d r %d a %d \n",targetcol.b,targetcol.g,targetcol.r,targetcol.a);
+LOGD("zzn with b %d g %d r %d a %d \n",replacecol.b,replacecol.g,replacecol.r,replacecol.a);
+LOGD("zzn at %d %d \n",x,y);
+//now calling recursion on current pixel
+recurse((Uint8*)surf->pixels,x,y,targetcol,replacecol);
+
+}

@@ -1,0 +1,27 @@
+C:\Users\thomas\andro\ws\zazastable\bin\classes.dex : \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\org\libsdl\app\DummyEdit.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\org\libsdl\app\SDLActivity$1.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\org\libsdl\app\SDLActivity$2.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\org\libsdl\app\SDLActivity$3.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\org\libsdl\app\SDLActivity$4.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\org\libsdl\app\SDLActivity$5.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\org\libsdl\app\SDLActivity$6.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\org\libsdl\app\SDLActivity$SDLCommandHandler.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\org\libsdl\app\SDLActivity$ShowTextInputTask.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\org\libsdl\app\SDLActivity.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\org\libsdl\app\SDLGenericMotionListener_API12.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\org\libsdl\app\SDLInputConnection.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\org\libsdl\app\SDLJoystickHandler.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\org\libsdl\app\SDLJoystickHandler_API12$RangeComparator.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\org\libsdl\app\SDLJoystickHandler_API12$SDLJoystick.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\org\libsdl\app\SDLJoystickHandler_API12.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\org\libsdl\app\SDLMain.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\org\libsdl\app\SDLSurface$1.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\org\libsdl\app\SDLSurface.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\zaza\stable\BuildConfig.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\zaza\stable\R$attr.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\zaza\stable\R$drawable.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\zaza\stable\R$layout.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\zaza\stable\R$string.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\zaza\stable\R.class \
+C:\Users\thomas\andro\ws\zazastable\bin\classes\zaza\stable\ZazastableActivity.class \

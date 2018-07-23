@@ -1,0 +1,89 @@
+.. ./ffmpeg.exe -framerate 5 -i frame%03d.bmp -c:v libx264 
+-pix_fmt yuv420p out.mp4
+
+./ffmpeg.exe -i out.mp4 -i fxs.wav -c:v copy -c:a aac -strict experimental sound.mp4
+
+
+#doens't offset sound
+#./ffmpeg.exe -i out.mp4 -itsoffset 00:00:26.0 -i fxs.wav -c:v copy -c:a aac -strict experimental offsetsound.mp4
+
+#doesn't offset either
+#./ffmpeg.exe -i out.mp4 -itsoffset 00:00:10.0 -i fxs.wav -vcodec libx264 -acodec libmp3lame offsetsound.mp4
+
+# concatenate several smaller videos with sound ( workaround 
+)
+./ffmpeg -f concat -i list.txt -c copy output.mp4
+
+
+# merge stereo audio
+ffmpeg -i input1.wav -i input2.wav -filter_complex 
+"[0:a][1:a]amerge=inputs=2,pan=stereo|c0<c0+c2|c1<c1+c3[aout]" 
+-map "[aout]" output.mp3
+
+#replaces audio and pad ( works but not mix )
+ ./ffmpeg -i lucien.mp4 -i tututututu.m4a -filter_complex " 
+[1:0] apad " -shortest padaudio.mp4
+
+
+#merges but sound stops when shortest audio track is reached 
+./ffmpeg -i output.mp4 -i tututututu.m4a -filter_complex 
+"[0:a][1:a]amerge=inputs=2[a]" -map 0:v -map "[a]" -c:v copy 
+-ac 2   mixed.mp4
+
+#merges sound with video, keeping sound and making it as 
+long as video ( neww shorter sound )
+./ffmpeg -i lucien.mp4 -i tututututu.m4a -filter_complex 
+"[1:a]apad[b];[0:a][b]amerge=inputs=2[a]" -map 0:v -map 
+"[a]" -c:v copy -ac 2   apadmixed.mp4
+
+# NOT WORKING test separating -af and -vf for better readability
+./ffmpeg -i lucien.mp4 -i tututututu.m4a -af"[1:a]apad[b];[0:a][b]amerge=inputs=2[a]" -map 0:v -map "[a]" -c:v copy -ac 2 afmixed.mp4
+
+
+#overlay transparent png
+ffmpeg -i lucien.mp4 -i overlay.png -filter_complex "[0:v][1:v] 
+overlay=0:0:enable='between(t,0,10)'" -pix_fmt yuv420p -c:a copy 
+frame.mp4
+
+
+#chroma key ( to test )
+ffmpeg -i <base-video> -i <overlay-video> -filter_complex 
+'[1:v]colorkey=0x<color>:<similarity>:<blend>[ckout];[0:v][ckout]overlay[out]' 
+-map '[out]' <output-file>
+
+
+#convert mp4 to uncompressed avi ( tested )
+../ffmpeg.exe -i 5tigreversuslucien.mp4 -acodec pcm_s16le -vcodec 
+rawvideo  tmp/5.avi
+
+#images to video with different read and out frame rate
+ ../../../ffmpeg.exe -framerate 4 -i frame%03d.bmp -c:v 
+rawvideo -r 30 flame.avi
+
+
+#overlay TESTED WORKS 
+$ ../../../ffmpeg.exe -i ../43raw_tige_transfo.avi -i 
+firescropped.avi -filter_complex 
+'[1:v]colorkey=0xffffffff[ckout];[0:v][ckout]overlay[out]' 
+-map '[out]' -c:v rawvideo composited.avi
+
+#padding TESTED
+../../../ffmpeg.exe -i firescropped.avi -vf 
+"pad=640:480:400:0:white" -c:v rawvideo rightfires.avi
+
+../../../ffmpeg.exe -i ../43raw_tige_transfo.avi -i 
+firescropped.avi -filter_complex 
+'[1:v]colorkey=0xffffffff[ckout];[0:v][ckout]overlay[out]' 
+-map '[out]' -map 0:1 -c:a pcm_s16le -c:v rawvideo 
+composited.avi
+
+#to raw video mentioning pixel _fmt
+../ffmpeg.exe -i 0titlesound.avi -c:v rawvideo -pix_fmt yuv420p \
+ -c:a copy 0yuv.avi
+
+#add empty audio on video
+ffmpeg -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=48000 \
+ -i 0title.avi \
+  -shortest -c:v copy -c:a pcm_s16le 0titlesound.avi
+
+

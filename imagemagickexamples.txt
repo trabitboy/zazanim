@@ -1,0 +1,1 @@
+convert.exe *.bmp -delay 1x5 cafeine.gif

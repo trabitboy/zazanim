@@ -1,0 +1,14 @@
+qasource pname.sh
+
+adb pull /storage/extSdCard/Android/data/$PNAME/files/current.sh
+echo "about to chmod"
+chmod 755 current.sh
+echo "about to source "
+source current.sh
+#source pname.sh
+echo "current imported $CURRENT"
+echo "current package name $PNAME"
+cd $CURRENT
+pwd
+echo "about to pull"
+adb pull /storage/extSdCard/Android/data/$PNAME/files/

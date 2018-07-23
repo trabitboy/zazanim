@@ -1,0 +1,7 @@
+package zaza.dev;
+
+import org.libsdl.app.*;
+
+
+public class ZazadevActivity extends SDLActivity {
+}

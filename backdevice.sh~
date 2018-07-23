@@ -1,0 +1,2 @@
+cd neoback
+adb pull /mnt/sdcard/Android/data/zaza.dev/files

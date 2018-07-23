@@ -1,0 +1,25 @@
+C:\Users\thomas\andro\ws\zazastable\bin\zazastable.ap_ \
+ : C:\Users\thomas\andro\ws\zazastable\res\drawable-hdpi\ic_launcher.png \
+C:\Users\thomas\andro\ws\zazastable\res\drawable-mdpi\ic_launcher.png \
+C:\Users\thomas\andro\ws\zazastable\res\drawable-xhdpi\ic_launcher.png \
+C:\Users\thomas\andro\ws\zazastable\res\drawable-xxhdpi\ic_launcher.png \
+C:\Users\thomas\andro\ws\zazastable\res\layout\main.xml \
+C:\Users\thomas\andro\ws\zazastable\res\values\strings.xml \
+C:\Users\thomas\andro\ws\zazastable\bin\res\drawable-hdpi\ic_launcher.png \
+C:\Users\thomas\andro\ws\zazastable\bin\res\drawable-mdpi\ic_launcher.png \
+C:\Users\thomas\andro\ws\zazastable\bin\res\drawable-xhdpi\ic_launcher.png \
+C:\Users\thomas\andro\ws\zazastable\bin\res\drawable-xxhdpi\ic_launcher.png \
+C:\Users\thomas\andro\ws\zazastable\assets\bg32.bmp \
+C:\Users\thomas\andro\ws\zazastable\assets\brush32.bmp \
+C:\Users\thomas\andro\ws\zazastable\assets\buttons.bmp \
+C:\Users\thomas\andro\ws\zazastable\assets\current.bmp \
+C:\Users\thomas\andro\ws\zazastable\assets\frame0.bmp \
+C:\Users\thomas\andro\ws\zazastable\assets\icon.bmp \
+C:\Users\thomas\andro\ws\zazastable\assets\iconalpha.bmp \
+C:\Users\thomas\andro\ws\zazastable\assets\next.bmp \
+C:\Users\thomas\andro\ws\zazastable\assets\palette.bmp \
+C:\Users\thomas\andro\ws\zazastable\assets\previous.bmp \
+C:\Users\thomas\andro\ws\zazastable\assets\sample.bmp \
+C:\Users\thomas\andro\ws\zazastable\assets\slash.wav \
+C:\Users\thomas\andro\ws\zazastable\assets\template.bmp \
+C:\Users\thomas\andro\ws\zazastable\bin\AndroidManifest.xml \

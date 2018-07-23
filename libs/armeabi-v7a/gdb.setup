@@ -1,0 +1,2 @@
+set solib-search-path C:/Users/thomas/andro/ws/zazastable/obj/local/armeabi-v7a
+directory C:/Users/thomas/andro/android-ndk-r15/build//../sysroot C:/Users/thomas/andro/ws/zazastable/jni/SDL/include C:/Users/thomas/andro/ws/zazastable/jni/SDLmixer C:/Users/thomas/andro/ws/zazastable/jni/src/../SDL/include C:/Users/thomas/andro/ws/zazastable/jni/src/SDLmixer C:/Users/thomas/andro/android-ndk-r15/build//../sources/cxx-stl/stlport/stlport C:/Users/thomas/andro/android-ndk-r15/build//../sources/cxx-stl//gabi++/include

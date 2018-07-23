@@ -1,0 +1,11 @@
+
+struct myRgba{
+
+	Uint8 r;
+	Uint8 g;
+	Uint8 b;
+	Uint8 a;
+};
+
+
+void floodfill( SDL_Surface * surf , Uint16 x, Uint16 y, myRgba replacecol );
