@@ -3476,12 +3476,9 @@ void initTimeCodeMode(){
 
 							if(pol->endofpress && painting){
 							  painting=false;
-							  if(activeBrush==roundEraser){
-								 LOGD("zzn clearing white from round eraser \n ");
-								 clearCurrentOfClearColorFullAlphaPixels();
-							  }
 							  
-							  if(BEHIND){
+							  
+  							  if(BEHIND){
 								  //we need to merge behind with current canvas when painting brush up
 								  //lets blit current on behind and make it current
 								  //TODO
@@ -3494,6 +3491,26 @@ void initTimeCodeMode(){
 								  commitAbove();
 								  
 							  }
+
+							  
+							  if(activeBrush==roundEraser){
+								 LOGD("zzn clearing white from round eraser \n ");
+								 clearCurrentOfClearColorFullAlphaPixels();
+							  }
+							  
+							  // if(BEHIND){
+								  // //we need to merge behind with current canvas when painting brush up
+								  // //lets blit current on behind and make it current
+								  // //TODO
+								  // commitBehind();
+								  
+								  // //then reinit behind (clean or reallocation)
+								  // // initBehind();
+							  // }else{
+								  
+								  // commitAbove();
+								  
+							  // }
 							}
 
 	}
@@ -3916,7 +3933,7 @@ bool checkButtonColl(int x,int y){
 				//false
 				);
 				
-				kshortcuts(&polled);
+				// kshortcuts(&polled);
 				
 				if(dodonpaint){
 					dodonpachiDraw(&polled);
