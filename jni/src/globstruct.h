@@ -89,6 +89,10 @@
 #define TOFF_TCODE_X 64
 #define TOFF_TCODE_Y 64
 
+#define TOFF_TCODEELAPSED_X 128
+#define TOFF_TCODEELAPSED_Y 64
+
+
 #define TOFF_SAVE_X 0
 #define TOFF_SAVE_Y 128
 

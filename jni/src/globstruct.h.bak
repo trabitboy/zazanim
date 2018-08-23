@@ -210,6 +210,9 @@
 #define TOFF_TGTDR_X 96
 #define TOFF_TGTDR_Y 1116
 
+#define TOFF_UNDO_X 64
+#define TOFF_UNDO_Y 1152
+
 
 //screen pos main screen
 #define BTN_BASE_W (Uint16)64*buttonZoom
@@ -230,6 +233,11 @@
 #define BTN_SETTINGS_UL_X (Uint16)(SCRWDTH -64*buttonZoom )
 #define BTN_SETTINGS_UL_Y (Uint16)128*buttonZoom
 // #define BTN_SETTINGS_W 64
+
+#define BTN_UNDO_UL_X (Uint16)(0 )
+#define BTN_UNDO_UL_Y (Uint16)128*buttonZoom
+
+
 
 #define BTN_FLG_UL_X 0
 #define BTN_FLG_UL_Y (Uint16)64*buttonZoom

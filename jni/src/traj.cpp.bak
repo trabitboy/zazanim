@@ -55,7 +55,7 @@ void calculateTraj(Blit * buf,Sint16 x1,Sint16 y1,Sint16 x2,Sint16 y2){
 		for(i=0;i<absdy;i++){
 			// Point * p = new Point();
 			buf[i].ybl  = y1 + i*dy/absdy;
-			buf[i].xbl  =(Sint16)( (float)x1 + ((float)i/(float)absdy)*(float)dx );
+			buf[i].xbl  = (float)x1 + ((float)i/(float)absdy)*(float)dx;
 			// pointsToDraw.push_back(p);
 		}
 		//signalling last slot
